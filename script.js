@@ -31,6 +31,7 @@ function decreaseEnergy() {
     }
     if (energy <= 0) {
         alert('The robot needs charging⚡⚡⚡!!!');
+        robotImage.src = './images/0-complaint.svg';
     }
 }
 
