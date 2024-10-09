@@ -1,21 +1,61 @@
-const INITIAL_ENERGY = 10
-const MIN_ENERGY = 0
-const LOW_ENERGY_THRESHOLD = 3
+let energy = 100;
 
-let energy = INITIAL_ENERGY
-while (energy >= MIN_ENERGY) {
+function updateBattery() {
+    const chargeLevel = document.getElementById('chargeLevel');
+    chargeLevel.style.height = `${energy}%`;
+    chargeLevel.className = '';
 
-    console.log(`Current energy level: ${energy}`)
-
-    if (energy === MIN_ENERGY) {
-        console.log('The robot is sad... 😢 It needs recharging!')
-    } else if (energy <= LOW_ENERGY_THRESHOLD) {
-        console.log('The robot is starting to feel tired.... 🥱')
+    if (energy <= 25) {
+        chargeLevel.classList.add('red');
+        robotStatus.textContent = 'The robot is sad... 😢 It needs recharging⚡!!!';
+    } else if (energy <= 50) {
+        chargeLevel.classList.add('orange');
+        robotStatus.textContent = 'The robot is trying to stay awake, but it’s getting harder... 😩';
+    } else if (energy <= 75) {
+        chargeLevel.classList.add('yellow');
+        robotStatus.textContent = 'The robot is starting to feel tired.... 🥱';
     } else {
-        console.log('The robot is happy and awake! 😊')
+        chargeLevel.classList.add('green');
+        robotStatus.textContent = 'The robot is happy and awake! 😊';
     }
-
-    energy--
 }
 
-console.log('The program is complete. The robot is resting.')
+function decreaseEnergy() {
+    if (energy > 0) {
+        energy -= 10;
+        updateBattery();
+    }
+    if (energy <= 0) {
+        alert('Робот нуждается в зарядке!');
+    }
+}
+
+updateBattery();
+
+function chargeEnergy() {
+    energy = 100; // Устанавливаем уровень энергии на 100%
+    updateBattery(); // Обновляем визуализацию
+}
+
+
+// const INITIAL_ENERGY = 100
+// const MIN_ENERGY = 0
+// const LOW_ENERGY_THRESHOLD = 30
+
+// let energy = INITIAL_ENERGY
+// while (energy >= MIN_ENERGY) {
+
+//     console.log(`Current energy level: ${energy}`)
+
+//     if (energy === MIN_ENERGY) {
+//         console.log('The robot is sad... 😢 It needs recharging!')
+//     } else if (energy <= LOW_ENERGY_THRESHOLD) {
+//         console.log('The robot is starting to feel tired.... 🥱')
+//     } else {
+//         console.log('The robot is happy and awake! 😊')
+//     }
+
+//     energy = energy - 10
+// }
+
+// console.log('The program is complete. The robot is resting.')
