@@ -8,35 +8,38 @@ function updateBattery() {
     if (energy <= 25) {
         chargeLevel.classList.add('red');
         robotStatus.textContent = 'The robot is sad... 😢 It needs recharging⚡!!!';
+        robotImage.src = './images/red-tired.svg';
     } else if (energy <= 50) {
         chargeLevel.classList.add('orange');
         robotStatus.textContent = 'The robot is trying to stay awake, but it’s getting harder... 😩';
+        robotImage.src = './images/orange-worried.svg';
     } else if (energy <= 75) {
         chargeLevel.classList.add('yellow');
         robotStatus.textContent = 'The robot is starting to feel tired.... 🥱';
+        robotImage.src = './images/yellow-smile.svg';
     } else {
         chargeLevel.classList.add('green');
         robotStatus.textContent = 'The robot is happy and awake! 😊';
+        robotImage.src = './images/green-laugh.svg';
     }
 }
 
 function decreaseEnergy() {
     if (energy > 0) {
-        energy -= 10;
+        energy -= 5;
         updateBattery();
     }
     if (energy <= 0) {
-        alert('Робот нуждается в зарядке!');
+        alert('The robot needs charging⚡⚡⚡!!!');
     }
 }
-
-updateBattery();
 
 function chargeEnergy() {
     energy = 100; // Устанавливаем уровень энергии на 100%
     updateBattery(); // Обновляем визуализацию
 }
 
+updateBattery();
 
 // const INITIAL_ENERGY = 100
 // const MIN_ENERGY = 0
