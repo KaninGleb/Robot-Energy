@@ -31,6 +31,7 @@ function decreaseEnergy() {
     }
     if (energy <= 0) {
         alert('The robot needs charging⚡⚡⚡!!!');
+        robotStatus.textContent = 'The robot has powered down... 😞 Time to recharge! 🔋';
         robotImage.src = './accets/images/robot-discharged.svg';
     }
 }
