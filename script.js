@@ -8,19 +8,19 @@ function updateBattery() {
     if (energy <= 25) {
         chargeLevel.classList.add('red');
         robotStatus.textContent = 'The robot is sad... 😢 It needs recharging⚡!!!';
-        robotImage.src = './images/red-tired.svg';
+        robotImage.src = './accets/images/red-cry.svg';
     } else if (energy <= 50) {
         chargeLevel.classList.add('orange');
         robotStatus.textContent = 'The robot is trying to stay awake, but it’s getting harder... 😩';
-        robotImage.src = './images/orange-worried.svg';
+        robotImage.src = './accets/images/orange-worried.svg';
     } else if (energy <= 75) {
         chargeLevel.classList.add('yellow');
         robotStatus.textContent = 'The robot is starting to feel tired.... 🥱';
-        robotImage.src = './images/yellow-smile.svg';
+        robotImage.src = './accets/images/yellow-smile.svg';
     } else {
         chargeLevel.classList.add('green');
         robotStatus.textContent = 'The robot is happy and awake! 😊';
-        robotImage.src = './images/green-laugh.svg';
+        robotImage.src = './accets/images/green-laugh.svg';
     }
 }
 
@@ -31,7 +31,7 @@ function decreaseEnergy() {
     }
     if (energy <= 0) {
         alert('The robot needs charging⚡⚡⚡!!!');
-        robotImage.src = './images/0-complaint.svg';
+        robotImage.src = './accets/images/robot-discharged.svg';
     }
 }
 
