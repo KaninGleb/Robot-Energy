@@ -6,25 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Robot Energy ⚡</title>
 </head>
 
 <body>
-
     <div class="wrapper">
-        <img id="robotImage" src="./assets/images/green-laugh.svg" alt="Robot" />
-
-        <div class="batteryPin">
-            <div class="white"></div>
-        </div>
-        <div class="battery" id="battery">
+        <img class="robot-image" id="robotImage" src="./assets/images/green-laugh.svg" alt="Robot" />
+        <div class="battery">
             <div id="chargeLevel"></div>
         </div>
-        <p id="robotStatus" class="status"></p>
-        <button class="workButton" onclick="decreaseEnergy()">Work</button>
-        <button class="chargeButton" onclick="chargeEnergy()">Recharge!!!</button>
+        <p class="status" id="robotStatus"></p>
+        <button class="robot-button r-interaction-work" onclick="decreaseEnergy()">Work</button>
+        <button class="robot-button r-interaction-charge" onclick="chargeEnergy()">Recharge!!!</button>
     </div>
 
     <script src="script.js"></script>
