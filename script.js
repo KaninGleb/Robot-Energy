@@ -43,6 +43,12 @@ function chargeEnergy() {
 
 updateBattery();
 
+const img = document.getElementById('robotImage');
+        img.addEventListener('dragstart', function(event) { // Отключение перетаскивание
+            event.preventDefault();
+        });
+
+
 // const INITIAL_ENERGY = 100
 // const MIN_ENERGY = 0
 // const LOW_ENERGY_THRESHOLD = 30
