@@ -28,8 +28,7 @@ function decreaseEnergy() {
     if (energy > 0) {
         energy -= 5;
         updateBattery();
-    }
-    if (energy <= 0) {
+    } else if (energy <= 0) {
         alert('The robot needs charging⚡⚡⚡!!!');
         robotStatus.textContent = 'The robot has powered down... 😞 Time to recharge! 🔋';
         robotImage.src = './accets/images/robot-discharged.svg';
@@ -44,9 +43,10 @@ function chargeEnergy() {
 updateBattery();
 
 const img = document.getElementById('robotImage');
-        img.addEventListener('dragstart', function(event) { // Отключение перетаскивание
-            event.preventDefault();
-        });
+img.addEventListener('dragstart', function (event) { // Отключение перетаскивание
+    event.preventDefault();
+});
+
 
 
 // const INITIAL_ENERGY = 100
